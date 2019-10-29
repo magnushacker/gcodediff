@@ -125,3 +125,4 @@ class ProfileCollection:
         self._filterIdentical = filterIdentical
         self._filterSingle = filterSingle
         self._rebuild()
+

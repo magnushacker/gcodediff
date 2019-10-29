@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'd:\Users\Magnus\Documents\QT projects\gcodediff\src\main\python\gcodediff.ui',
 # licensing of 'd:\Users\Magnus\Documents\QT projects\gcodediff\src\main\python\gcodediff.ui' applies.
 #
-# Created: Sun Oct 27 21:09:54 2019
+# Created: Tue Oct 29 23:03:18 2019
 #      by: pyside2-uic  running on PySide2 5.12.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,13 +13,15 @@ from PySide2 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(600, 400)
+        MainWindow.resize(760, 479)
         MainWindow.setBaseSize(QtCore.QSize(600, 400))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
         self.dataView = QtWidgets.QTableView(self.centralwidget)
+        self.dataView.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.dataView.setMidLineWidth(1)
         self.dataView.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.dataView.setAlternatingRowColors(False)
         self.dataView.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
@@ -32,7 +34,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.dataView, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 760, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -61,6 +63,8 @@ class Ui_MainWindow(object):
         self.actionHide_singles = QtWidgets.QAction(MainWindow)
         self.actionHide_singles.setCheckable(True)
         self.actionHide_singles.setObjectName("actionHide_singles")
+        self.actionClose_file = QtWidgets.QAction(MainWindow)
+        self.actionClose_file.setObjectName("actionClose_file")
         self.menuFile.addAction(self.actionOpen)
         self.menuFile.addAction(self.actionExit)
         self.menuOptions.addAction(self.actionHide_identical)
@@ -91,4 +95,5 @@ class Ui_MainWindow(object):
         self.actionHide_singles.setText(QtWidgets.QApplication.translate("MainWindow", "Hide single values", None, -1))
         self.actionHide_singles.setToolTip(QtWidgets.QApplication.translate("MainWindow", "Hide lines where only one column has a value", None, -1))
         self.actionHide_singles.setShortcut(QtWidgets.QApplication.translate("MainWindow", "Ctrl+S", None, -1))
+        self.actionClose_file.setText(QtWidgets.QApplication.translate("MainWindow", "Close file", None, -1))
 
