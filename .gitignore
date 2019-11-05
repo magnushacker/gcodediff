@@ -1,2 +1,2 @@
 target/
-*.pyc
+src/main/python/__pycache__/
