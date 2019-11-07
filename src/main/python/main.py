@@ -62,12 +62,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.profileModel.setFilters(self.ui.actionHide_identical.isChecked(), self.ui.actionHide_singles.isChecked())
         
     def contextMenuEvent(self, event):
-        print(self.ui.dataView.columnAt(event.x()))    
-        menu = QtWidgets.QMenu()
-        closeFileAction = QtWidgets.QAction("Close file", self)
-        menu.addAction(closeFileAction)
-        # menu.popup(QtWidgets.QCur)
-        # menu.popup(QtWidgets.QCursor.pos())
+        col = self.ui.dataView.columnAt(event.x())
+        if col > 0:
+            menu = QtWidgets.QMenu()
+            closeFileAction = QtWidgets.QAction("Close file", self)
+            menu.addAction(closeFileAction)
+            menu.popup(event.globalPos())
         
 if __name__ == '__main__':
     appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
