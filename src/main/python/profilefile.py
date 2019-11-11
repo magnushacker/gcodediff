@@ -105,6 +105,10 @@ class ProfileCollection:
             if f.fileName() == filename:
                 self._files.remove(f)
                 self._rebuild()
+                
+    def removeFileNo(self, fileno):
+      self._files.pop(fileno)
+      self._rebuild()
 
     def profileName(self, profileNum):
         return self._profiles[profileNum]

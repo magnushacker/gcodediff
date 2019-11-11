@@ -39,6 +39,10 @@ class ProfileModel(QtCore.QAbstractTableModel):
         self._profiles.addFile(filename)
         self.layoutChanged.emit()
 
+    def removeFileNo(self, fileno):
+        self._profiles.removeFileNo(fileno)
+        self.layoutChanged.emit()
+        
     def setFilters(self, hideIdentical, hideSingle):
         self._profiles.setFilters(hideIdentical, hideSingle)
         self.layoutChanged.emit()
@@ -64,10 +68,12 @@ class MainWindow(QtWidgets.QMainWindow):
     def contextMenuEvent(self, event):
         col = self.ui.dataView.columnAt(event.x())
         if col > 0:
-            menu = QtWidgets.QMenu()
-            closeFileAction = QtWidgets.QAction("Close file", self)
-            menu.addAction(closeFileAction)
-            menu.popup(event.globalPos())
+            menu = QtWidgets.QMenu(self)
+            closeFileAction = menu.addAction("Close file")
+            act = menu.exec_(event.globalPos())
+            
+            if act == closeFileAction:
+                self.profileModel.removeFileNo(col-1)
         
 if __name__ == '__main__':
     appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
