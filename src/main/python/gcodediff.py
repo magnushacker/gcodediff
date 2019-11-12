@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'c:\Users\magnush\Documents\GitHub\gcodediff\src\main\python\gcodediff.ui',
 # licensing of 'c:\Users\magnush\Documents\GitHub\gcodediff\src\main\python\gcodediff.ui' applies.
 #
-# Created: Tue Nov 12 23:25:52 2019
+# Created: Tue Nov 12 23:48:49 2019
 #      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(760, 479)
+        MainWindow.resize(600, 400)
         MainWindow.setBaseSize(QtCore.QSize(600, 400))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.dataView, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 760, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
