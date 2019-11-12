@@ -4,7 +4,7 @@ A small utility to display and compare slicer settings between two or more .gcod
 runs on Windows.
 
 ### Installation
-Download and run the installer from [here](https://github.com/magnushacker/gcodediff/blob/master/target/GCodeDiffSetup.exe).
+Download and run the installer from [here](https://github.com/magnushacker/gcodediff/releases).
 
 ### Usage
 Use the File->Open command to open a file. If the file is a .gcode file, one column will be added to the display. If the file is a .ini file it is assumed to contain a config bundle and all profiles found in the file will be added as separate columns.
