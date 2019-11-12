@@ -1,4 +1,4 @@
-from fbs_runtime.application_context import ApplicationContext
+from fbs_runtime.application_context.PySide2 import ApplicationContext
 from PySide2 import QtCore, QtWidgets
 
 import sys
@@ -39,6 +39,10 @@ class ProfileModel(QtCore.QAbstractTableModel):
         self._profiles.addFile(filename)
         self.layoutChanged.emit()
 
+    def refreshFiles(self):
+        self._profiles.refreshFiles()
+        self.layoutChanged.emit()
+
     def removeFileNo(self, fileno):
         self._profiles.removeFileNo(fileno)
         self.layoutChanged.emit()
@@ -61,6 +65,11 @@ class MainWindow(QtWidgets.QMainWindow):
         fname = QtWidgets.QFileDialog.getOpenFileName(self, 'Open')
         if fname[0]:
             self.profileModel.addFile(fname[0])
+            self.ui.dataView.resizeColumnToContents(0)
+
+    def refreshFiles(self):
+        self.profileModel.refreshFiles()
+
 
     def setFilters(self):
         self.profileModel.setFilters(self.ui.actionHide_identical.isChecked(), self.ui.actionHide_singles.isChecked())

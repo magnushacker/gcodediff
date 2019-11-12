@@ -92,6 +92,11 @@ class ProfileCollection:
             self._files.append(file)
             self._rebuild()
 
+    def refreshFiles(self):
+        for f in self._files:
+            f.load()
+        self._rebuild()
+        
     def refreshFile(self, filename):
         for f in self._files:
             if f.fileName() == filename:
