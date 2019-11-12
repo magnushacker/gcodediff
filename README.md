@@ -14,4 +14,6 @@ There are two options in the Options menu:
 differences between files.
 * __Hide single values__: when enabled, all rows where only only column have a value are hidden. These rows are not so interesting if you only want to compare two files.
 
+If the files change on disk, hit F5 to refresh.
+
 ![GCode Diff](https://github.com/magnushacker/gcodediff/blob/master/images/gcodediff.png)
