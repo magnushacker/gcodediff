@@ -1,3 +1,4 @@
 target/
 src/main/python/__pycache__/
 *.pyc
+*.pyc
