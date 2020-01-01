@@ -4,7 +4,7 @@ A small utility to display and compare slicer settings between two or more .gcod
 runs on Windows.
 
 ### Installation
-Download and run the installer from [here](https://github.com/magnushacker/gcodediff/blob/master/target/GCodeDiffSetup.exe).
+Download and run the installer from [here](https://github.com/magnushacker/gcodediff/releases).
 
 ### Usage
 Use the File->Open command to open a file. If the file is a .gcode file, one column will be added to the display. If the file is a .ini file it is assumed to contain a config bundle and all profiles found in the file will be added as separate columns.
@@ -13,5 +13,7 @@ There are two options in the Options menu:
 * __Hide identical__: when enabled, all rows where all columns have the same value are hidden. This makes it easy to quickly visualize
 differences between files.
 * __Hide single values__: when enabled, all rows where only only column have a value are hidden. These rows are not so interesting if you only want to compare two files.
+
+If the files change on disk, hit F5 to refresh.
 
 ![GCode Diff](https://github.com/magnushacker/gcodediff/blob/master/images/gcodediff.png)

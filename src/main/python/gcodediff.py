@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\Users\Magnus\Documents\QT projects\gcodediff\src\main\python\gcodediff.ui',
-# licensing of 'd:\Users\Magnus\Documents\QT projects\gcodediff\src\main\python\gcodediff.ui' applies.
+# Form implementation generated from reading ui file 'c:\Users\magnush\Documents\GitHub\gcodediff\src\main\python\gcodediff.ui',
+# licensing of 'c:\Users\magnush\Documents\GitHub\gcodediff\src\main\python\gcodediff.ui' applies.
 #
-# Created: Tue Oct 29 23:03:18 2019
-#      by: pyside2-uic  running on PySide2 5.12.3
+# Created: Tue Nov 12 23:48:49 2019
+#      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,7 +13,7 @@ from PySide2 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(760, 479)
+        MainWindow.resize(600, 400)
         MainWindow.setBaseSize(QtCore.QSize(600, 400))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.dataView, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 760, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 600, 21))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtWidgets.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -65,7 +65,10 @@ class Ui_MainWindow(object):
         self.actionHide_singles.setObjectName("actionHide_singles")
         self.actionClose_file = QtWidgets.QAction(MainWindow)
         self.actionClose_file.setObjectName("actionClose_file")
+        self.actionRefresh = QtWidgets.QAction(MainWindow)
+        self.actionRefresh.setObjectName("actionRefresh")
         self.menuFile.addAction(self.actionOpen)
+        self.menuFile.addAction(self.actionRefresh)
         self.menuFile.addAction(self.actionExit)
         self.menuOptions.addAction(self.actionHide_identical)
         self.menuOptions.addAction(self.actionHide_singles)
@@ -77,6 +80,7 @@ class Ui_MainWindow(object):
         QtCore.QObject.connect(self.actionOpen, QtCore.SIGNAL("triggered()"), MainWindow.openFile)
         QtCore.QObject.connect(self.actionHide_identical, QtCore.SIGNAL("triggered()"), MainWindow.setFilters)
         QtCore.QObject.connect(self.actionHide_singles, QtCore.SIGNAL("triggered()"), MainWindow.setFilters)
+        QtCore.QObject.connect(self.actionRefresh, QtCore.SIGNAL("triggered()"), MainWindow.refreshFiles)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -96,4 +100,6 @@ class Ui_MainWindow(object):
         self.actionHide_singles.setToolTip(QtWidgets.QApplication.translate("MainWindow", "Hide lines where only one column has a value", None, -1))
         self.actionHide_singles.setShortcut(QtWidgets.QApplication.translate("MainWindow", "Ctrl+S", None, -1))
         self.actionClose_file.setText(QtWidgets.QApplication.translate("MainWindow", "Close file", None, -1))
+        self.actionRefresh.setText(QtWidgets.QApplication.translate("MainWindow", "Refresh", None, -1))
+        self.actionRefresh.setShortcut(QtWidgets.QApplication.translate("MainWindow", "F5", None, -1))
 
